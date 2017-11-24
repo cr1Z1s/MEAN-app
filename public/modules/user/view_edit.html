@@ -1,0 +1,25 @@
+<form name="editForm">
+  <div class="form-group">
+    <label class="col-form-label" for="username">Username</label>
+    <input type="text" class="form-control" id="editUsername" placeholder="Username" name="username" ng-model="editUsername" ng-readonly="editUsername">
+  </div>
+  <div class="form-group">
+    <label class="col-form-label" for="name">Name</label>
+    <input type="text" class="form-control" id="editName" placeholder="Name" ng-model="editName" name="editName">
+  </div>
+  <div class="form-group">
+    <label class="col-form-label" for="password">Password</label>
+    <input type="text" class="form-control" id="password" placeholder="Password" name="password" ng-model="password" required ng-minlength="6" ng-change="pswdCheck()">
+  </div>
+  <p class="text-danger" ng-show="editForm.password.$invalid && !editForm.password.$pristine">Password is required.</p>
+  <p class="text-danger" ng-if="editForm.password.$error.minlength">Password must have at least 6 characters.</p>
+  <div class="form-group">
+    <label class="col-form-label" for="password2">Password 2</label>
+    <input type="text" class="form-control" id="password2" placeholder="Password2" name="password2" ng-model="password2" ng-change="pswdCheck()">
+  </div>
+  <p class="text-danger" ng-if="!match && !editForm.password.$pristine">Passwords don't match.</p>
+  <div>
+    <a href="#" class="btn btn-primary btn-lg" ng-click="edit()">Edit</a>
+    <a ui-sref="home" class="btn btn-secondary btn-lg">Cancel</a>
+  </div>
+</form>
