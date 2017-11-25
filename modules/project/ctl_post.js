@@ -5,7 +5,7 @@ module.exports.newProject = function (req, res) {
   var userinfo = {
     name: req.body.name,
     description: req.body.description || null,
-    user_id: req.body.userid
+    user_id: req.body.userId
   }
   Project.create(userinfo, function (err, doc) {
     if (err) {

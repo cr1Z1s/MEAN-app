@@ -20,12 +20,12 @@ router.delete('/delete', checker.tokenChecker, del.removeProject)
 // get task by id
 router.get('/task/:taskId', read.getTaskById)
 // get task by userid
-router.get('/all/:projectId', read.getAllTasks)
+router.get('/allTask/:projectId', read.getAllTasks)
 // create task
 router.post('/newTask', create.newTask)
 // edit task
 router.put('/editTask', update.editTask)
 // Delete task
-router.delete('/delete', checker.tokenChecker, del.removeTask)
+router.delete('/deleteTask', checker.tokenChecker, del.removeTask)
 
 module.exports = router;
